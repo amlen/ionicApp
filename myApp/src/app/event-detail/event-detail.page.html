@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Event detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- detail  of event -->
+<ion-content >
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ event.name }}</ion-card-title>
+          <ion-card-subtitle>Category: {{ event.category.name }} </ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content >
+        {{ event.description }}
+        <p>
+          <ion-button color="primary"  [routerLink]="['/update-event/', event.id]">Update</ion-button>
+          <ion-button color="primary" (click)="delete(event.id)">Delete</ion-button>
+        </p>
+        
+        </ion-card-content>
+      </ion-card>
+      
+</ion-content>
+

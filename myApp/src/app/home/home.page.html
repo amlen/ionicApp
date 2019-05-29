@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <!-- List of events -->
+  <ion-content>
+      <ion-card class="welcome-card">
+          <ion-img  width="80" height="80" src="/assets/events.jpg"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>Welcome to ECAM Events</ion-card-subtitle>
+            <ion-card-title>Welcome to ECAM Events</ion-card-title>
+          </ion-card-header>
+      </ion-card>
+
+    <ion-list>
+      <ion-item *ngFor="let event of events" [routerLink]="['/event-detail', event.id]" >
+        <ion-label >{{ event.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  
+  <ion-footer>
+      <ion-toolbar>
+          <ion-button expand="full" [routerLink]="['/add-event']">Add event </ion-button>
+      </ion-toolbar>
+  </ion-footer>
+
+<!--ion-content>
+   
+
+    
+    <ion-item>
+      <ion-label posistion="fixed">Title</ion-label>
+      <ion-input [(ngModule)]="newItem.title"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label posistion="fixed">Description</ion-label>
+      <ion-input [(ngModule)]="newItem.description"></ion-input>
+    </ion-item>
+
+    <ion-button expands="full" (click="addItem()")>Add Item</ion-button>
+
+    <ion-list #mylist>
+
+      <ion-list-header>
+        <ion-label>My Items</ion-label>
+      </ion-list-header>
+
+      <ion-item-sliding *ngFor="let item of items">
+
+        <ion-item>
+          <ion-label text-wrap> 
+            <h3>{{ item.title}}</h3>
+            <ion-text color="secondary">
+              <p>{{ item.description}}</p>
+            </ion-text>
+          </ion-label>
+        </ion-item>
+
+        <ion-item-option side="end">
+          <ion-item-option color="secondary" (click)="updateItem(item)">Update</ion-item-option>
+          <ion-item-option color="secondary" (click)="deleteItem(item)">Delete</ion-item-option>
+        </ion-item-option>
+
+      </ion-item-sliding>
+
+    </ion-list>
+
+    <ion-footer>
+      <ion-toolbar>
+        <p>Create by Yassine Akharaze</p>
+      </ion-toolbar>
+    </ion-footer>
+</ion-content-->
